@@ -1,0 +1,60 @@
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/antowrnto/codefy/graphs/commit-activity)
+
+# 🤔 Apa Itu Codefy?
+Codefy merupakan website e-learning screencast dengan menggunakan framework laravel 8, dengan fitur yang lengkap seperti enroled course, showcase project, submission project,  quiz per course nya, wesbite multilanguage [ Maintenance / Masih Dalam Tahap Development ]
+
+# 🤗 Apa Saja Yang Ada?
+Codefy memiliki fitur fitur yang sangat keren antaranya : 
+1. Enroled Courses
+2. Submission Course
+3. Quiz
+4. Interaktif Course
+5. Showcase Your Projects
+6. Dan Lainnya
+
+# 🙇 Bagaimana Cara Install Nya?
+## Server Required
+   1. PHP >= 7.3 || 8.0
+   2. Composer
+   3. BCMath PHP Extension.
+   4. C Type PHP Extension.
+   5. JSON PHP Extension.
+   6. Mbstring PHP Extension.
+   7. penSSL PHP Extension.
+   8. PDO PHP Extension.
+   9. Tokenizer PHP Extension.
+   10. XML PHP Extension.
+## Install Codefy
+   1. Clone repository nya
+      ```
+      git clone https://github.com/antowrnto/codefy.git
+      ```
+   2. Install vendor dependencies
+      ```
+      composer install && composer upgarade
+      ```
+   3. Install node moduls untuk tailwind CSS<br/>
+       - Menggunakan NPM
+       ```
+       npm install && npm run dev
+       ```
+       - Menggunakan YARN
+       ```
+       yarn && yarn run dev
+       ```
+   4. Buat database nyaa di phpmyadmin atau sejensinya<br/>
+        - Masukan username dan database name di  ``` .env ```<br/>
+        - Buka Command line<br/>
+           ```
+           cd PATH_TO_PROJECT
+           ```
+           ```
+           php artisan migrate
+           ```
+   5. Starting development server
+        ```
+        php artisan serve
+        ```
+# 😎 Happy Coding And Learning
+------------
+Made With ♥️ ANTO WIRANTO
