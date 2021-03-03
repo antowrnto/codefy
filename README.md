@@ -62,10 +62,15 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
         ```
         
 # Todo Task
-    CRUD ALL DATA
-    PAYMENT GATEAWAY
-    INTEGRATION WITH MIDTRANS
-    TWO FACTOR AUTHENTICATION
+- [ ]    CRUD ALL DATA
+- [ ]    PAYMENT GATEAWAY
+- [ ]    INTEGRATION WITH MIDTRANS
+- [ ]    TWO FACTOR AUTHENTICATION
+- [x]    RRELATIONSHIP TABLE DATABASE
+- [ ]    CHANGE UI PROFILE INFORMATION
+- [ ]    FOLLOWABLE USER
+- [ ]    CREATE POST USER
+
 # 😎 Happy Coding And Learning
 ------------
 Made With ♥️ ANTO WIRANTO
