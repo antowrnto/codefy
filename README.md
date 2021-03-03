@@ -1,4 +1,9 @@
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/antowrnto/codefy/graphs/commit-activity)
+
+<p align="center">
+<img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square">
+
+</p>
+
 
 # 🤔 Apa Itu Codefy?
 Codefy merupakan website e-learning screencast dengan menggunakan framework laravel 8, dengan fitur yang lengkap seperti enroled course, showcase project, submission project,  quiz per course nya, wesbite multilanguage [ Maintenance / Masih Dalam Tahap Development ]
@@ -55,6 +60,17 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
         ```
         php artisan serve
         ```
+        
+# ☑ Todo Task
+- [ ]    CRUD ALL DATA
+- [ ]    PAYMENT GATEAWAY
+- [ ]    INTEGRATION WITH MIDTRANS
+- [ ]    TWO FACTOR AUTHENTICATION
+- [x]    RRELATIONSHIP TABLE DATABASE
+- [ ]    CHANGE UI PROFILE INFORMATION
+- [ ]    FOLLOWABLE USER
+- [ ]    CREATE POST USER
+
 # 😎 Happy Coding And Learning
 ------------
 Made With ♥️ ANTO WIRANTO
