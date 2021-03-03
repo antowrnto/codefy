@@ -60,6 +60,12 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
         ```
         php artisan serve
         ```
+        
+# Todo Task
+    CRUD ALL DATA
+    PAYMENT GATEAWAY
+    INTEGRATION WITH MIDTRANS
+    TWO FACTOR AUTHENTICATION
 # 😎 Happy Coding And Learning
 ------------
 Made With ♥️ ANTO WIRANTO
