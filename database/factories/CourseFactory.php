@@ -33,8 +33,8 @@ class CourseFactory extends Factory
             'duration' => '13 Hours',
             'series_id' => rand(1, 15),
             'mentor_id' => 1,
-           // 'created_at' => $this->faker->dateTimeBetween('-1 month', '+10 month'),
-           // 'updated_at' => $this->faker->dateTimeBetween('-1 month', '+10 month')
+            'created_at' => $this->faker->dateTimeBetween('-1 month', '+10 month'),
+            'updated_at' => $this->faker->dateTimeBetween('-1 month', '+10 month')
         ];
     }
 }
