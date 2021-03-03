@@ -17,6 +17,11 @@ Route::get('/quiz', function(){
   dd($response->json());
 });
 
+Route::get('/enctype', function(){
+   $decrypted = Crypt::decryptString('eyJpdiI6IitNdzNldUFuZXRyQ0Z6bVRmZmtTRnc9PSIsInZhbHVlIjoiTDRURWpZK1pJWTBQZGFzNFlTUm1uVDNIZS8wYW90VllkWkh2elpGM0RCbUo2RHhNZnRWYzlrQXFnZFh3Y2VudiIsIm1hYyI6IjlkNDMzMDdiMGZkYTQxNzI5Yjc5NWRhYWIwZGZkOGE5NDMzMDUyODI3MmIzOTA0MTNhOTE5Mzk3ZWE1MDIxZDUifQ==');
+   dd($decrypted, 'SwoOw0vIUY5FIlNnnMIqT4E4pbIMa6Fon67Xxisp');
+});
+
 Route::get('/', HomeController::class);
 Route::get('/redirect', ResponseRedirectHomeController::class);
 
