@@ -1,4 +1,14 @@
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/antowrnto/codefy/graphs/commit-activity)
+
+<p align="center">
+<img src="https://img.shields.io/github/issues/antowrnto/codefy?style=flat-square">
+<img src="https://img.shields.io/github/stars/antowrnto/codefy?style=flat-square"> 
+<img src="https://img.shields.io/github/forks/antowrnto/codefy?style=flat-square">
+<img src="https://img.shields.io/github/license/antowrnto/codefy?style=flat-square">
+<img src="http://hits.dwyl.com/syauqizaidan/https://githubcom/antowrnto/codefy.svg">
+<img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square">
+<img src="https://img.shields.io/github/followers/antowrnto.svg?style=flat-square&label=Follow&maxAge=2592000">
+</p>
+
 
 # 🤔 Apa Itu Codefy?
 Codefy merupakan website e-learning screencast dengan menggunakan framework laravel 8, dengan fitur yang lengkap seperti enroled course, showcase project, submission project,  quiz per course nya, wesbite multilanguage [ Maintenance / Masih Dalam Tahap Development ]
