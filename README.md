@@ -1,12 +1,7 @@
 
 <p align="center">
-<img src="https://img.shields.io/github/issues/antowrnto/codefy?style=flat-square">
-<img src="https://img.shields.io/github/stars/antowrnto/codefy?style=flat-square"> 
-<img src="https://img.shields.io/github/forks/antowrnto/codefy?style=flat-square">
-<img src="https://img.shields.io/github/license/antowrnto/codefy?style=flat-square">
-<img src="http://hits.dwyl.com/syauqizaidan/https://githubcom/antowrnto/codefy.svg">
 <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square">
-<img src="https://img.shields.io/github/followers/antowrnto.svg?style=flat-square&label=Follow&maxAge=2592000">
+
 </p>
 
 
