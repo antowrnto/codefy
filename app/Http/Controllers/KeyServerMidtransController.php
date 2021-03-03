@@ -9,6 +9,12 @@ class KeyServerMidtransController extends Controller
 {
     public static function getKeyServer()
     {
+      /*/**
+       * Mohon untuk api key server midrans
+       * pergunakan api key server itu denganb haik
+       * jangan di salahgunakan
+       */
+      
       $keyServer = env('SERVER_KEY_MIDTRANS') 
                    ? env('SERVER_KEY_MIDTRANS') 
                    : Crypt::decryptString('');

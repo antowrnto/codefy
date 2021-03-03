@@ -13,6 +13,7 @@
   </x-slot>
 
   <section id="dashboard-analytics">
+   {{ dd(json_decode($chartDataCourses)) }}
     <div class="row">
       <div class="col-lg-6 col-md-12 col-sm-12">
         <div class="card bg-analytics text-white">
@@ -183,7 +184,7 @@
                 Last 7 Days
               </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownItem2">
-                <a class="dropdown-item" href="#">Last 28 Days</a>
+                <a class="dr1opdown-item" href="#">Last 28 Days</a>
                 <a class="dropdown-item" href="#">Last Month</a>
                 <a class="dropdown-item" href="#">Last Year</a>
               </div>
@@ -450,6 +451,73 @@
   </x-slot>
   <x-slot name="page_script">
     <script src="{{ asset('js/scripts/pages/dashboard-analytics.js') }}"></script>
+    <script>
+      var orderChartoptions = {
+        chart: {
+          height: 100,
+          type: 'area',
+          toolbar: {
+            show: false,
+          },
+          sparkline: {
+            enabled: true
+          },
+          grid: {
+            show: false,
+            padding: {
+              left: 0,
+              right: 0
+            }
+          },
+        },
+        colors: ['#FF9F43'],
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth',
+          width: 2.5
+        },
+        fill: {
+          type: 'gradient',
+          gradient: {
+            shadeIntensity: 0.9,
+            opacityFrom: 0.7,
+            opacityTo: 0.5,
+            stops: [0, 80, 100]
+          }
+        },
+        series: [{
+          name: 'Courses',
+          data: {{ json_decode() }}
+        }],
+    
+        xaxis: {
+          labels: {
+            show: false,
+          },
+          axisBorder: {
+            show: false,
+          }
+        },
+        yaxis: [{
+          y: 0,
+          offsetX: 0,
+          offsetY: 0,
+          padding: { left: 0, right: 0 },
+        }],
+        tooltip: {
+          x: { show: false }
+        },
+      }
+    
+      var orderChart = new ApexCharts(
+        document.querySelector("#orders-received-chart"),
+        orderChartoptions
+      );
+    
+      orderChart.render();
+    </script>
   </x-slot>
 
 </x-dashboard-layout>

@@ -42,4 +42,10 @@ return [
        'redirect' => env('GOOGLE_CLIENT_REDIRECT'),
     ],
 
+    'live' => [ 
+       'client_id' => env('LIVE_CLIENT_ID'), 
+       'client_secret' => env('LIVE_CLIENT_SECRET'), 
+       'redirect' => env('GOOGLE_CLIENT_REDIRECT') 
+    ],
+
 ];
