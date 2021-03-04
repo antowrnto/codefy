@@ -21,6 +21,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "algoliasearch": "^4.8.5",
         "password-strength-meter": "^2.1.0"
     }
 }
