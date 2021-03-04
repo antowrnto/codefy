@@ -57,7 +57,10 @@
     <!-- BEGIN: Main Menu-->
     <x-main-menu-dashboard/>
     <!-- END: Main Menu-->
-
+    
+    {{ $sidebar_left }}
+    
+    @if(!$sidebar_left)
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-overlay"></div>
@@ -72,6 +75,7 @@
         </div>
     </div>
     <!-- END: Content-->
+    @endif
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
