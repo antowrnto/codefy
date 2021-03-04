@@ -13,7 +13,6 @@
   </x-slot>
 
   <section id="dashboard-analytics">
-   {{ dd(json_decode($chartDataCourses)) }}
     <div class="row">
       <div class="col-lg-6 col-md-12 col-sm-12">
         <div class="card bg-analytics text-white">
