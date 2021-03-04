@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Course extends Model
 {
     use HasFactory;
+    use Searchable;
     
     public function mentor(){
     		return $this->belongsTo(User::class, 'mentor_id');
@@ -27,5 +29,17 @@ class Course extends Model
         'course_id',
         'student_id')
         ->withTimestamps();
+    }
+    
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+    
+        $array = $this->transform($array);
+    
+        $array['series_id'] = $this->series->title;
+        $array['mentor'] = $this->mentor->name;
+    
+        return $array;
     }
 }

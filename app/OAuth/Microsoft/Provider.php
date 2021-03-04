@@ -4,7 +4,6 @@ namespace App\OAuth\Microsoft;
 
 use SocialiteProviders\Manager\OAuth2\AbstractProvider;
 use SocialiteProviders\Manager\OAuth2\User;
-use App\Models\User;
 
 class Provider extends AbstractProvider
 {
