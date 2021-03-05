@@ -5,16 +5,40 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Course;
 
 class DashboardController extends Controller
 {
     
+    public $countDataCourses;
+    public $countDataUsers;
     
     public function __construct()
     {
-        //
+      $this->middleware(function ($request, $next) {
+          switch (Auth::user()->roles[0]->name) {
+            case 'administrator':
+              $this->countDataCourses = Course::all()->count();
+              $this->countDataUsers   = User::all()->count();
+              break;
+              
+            case 'mentor':
+              $this->countDataCourses = Auth::user()->courseMentors->count();
+              $this->countDataUsers   = null;
+              break;
+              
+            case 'student':
+              $this->countDataCourses = Auth::user()->courses->count();
+              break;
+            
+            default:
+              $this->countDataCourses = null;
+              break;
+          }
+        return $next($request);
+      });
     }
     
     /**
@@ -29,8 +53,10 @@ class DashboardController extends Controller
         return view('dashboard', [
             'quote'            => Inspiring::quote(),
             'greeting'         => $this->_greeting(),
-            'chartDataCourses' => $this->_getChartDataCourses(),
-            'chartDataUsers'   => $this->_getChartDataUsers(),
+            'chartDataCourses' => json_encode($this->_getChartDataCourses()),
+            'chartDataUsers'   => json_encode($this->_getChartDataUsers()),
+            'countDataCourses' => $this->countDataCourses,
+            'countDataUsers'   => $this->countDataUsers,
         ]);
     }
     
@@ -59,21 +85,17 @@ class DashboardController extends Controller
                               ->whereYear('created_at', date('Y'))
                               ->groupBy(DB::raw("Month(created_at)"))
                               ->pluck('count');
-        $months = Course::select(DB::raw("MONTH(created_at) as month"))
-                              ->whereYear('created_at', date('Y'))
-                              ->groupBy(DB::raw("Month(created_at)"))
-                              ->pluck('month');
-    
-        $datas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        foreach ($months as $index => $month) {
-          $datas[$month] = $course[$index];
-        }  
         
-        return $datas;
+        return $course;
     }
     
     private function _getChartDataUsers()
     {
-        //
+        $users = User::select(DB::raw("COUNT(created_at) as count"))
+                              ->whereYear('created_at', date('Y'))
+                              ->groupBy(DB::raw("Month(created_at)"))
+                              ->pluck('count');
+
+        return $users;
     }
 }

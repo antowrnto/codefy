@@ -9,7 +9,6 @@ use Laravel\Scout\Searchable;
 class Course extends Model
 {
     use HasFactory;
-    use Searchable;
     
     public function mentor(){
     		return $this->belongsTo(User::class, 'mentor_id');
@@ -38,8 +37,8 @@ class Course extends Model
         $array = $this->transform($array);
     
         $array['series_id'] = $this->series->title;
-        $array['mentor'] = $this->mentor->name;
-    
+        $array['mentor_id'] = $this->mentor->name;
+        
         return $array;
     }
 }
