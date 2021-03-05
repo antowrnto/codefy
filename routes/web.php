@@ -17,6 +17,9 @@ Route::get('/quiz', function(){
   dd($response->json());
 });
 
+Route::get('/learn', function(){
+  return view('learning');
+});
 Route::get('/', HomeController::class);
 Route::get('/redirect', ResponseRedirectHomeController::class);
 

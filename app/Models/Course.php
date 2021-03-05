@@ -9,6 +9,7 @@ use Laravel\Scout\Searchable;
 class Course extends Model
 {
     use HasFactory;
+    use Searchable;
     
     public function mentor(){
     		return $this->belongsTo(User::class, 'mentor_id');

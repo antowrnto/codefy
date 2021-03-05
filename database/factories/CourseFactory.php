@@ -28,6 +28,7 @@ class CourseFactory extends Factory
             'language' => 'ID',
             'programming_language' => 'Python',
             'data' => '{null}',
+            'type_course' => 'interactive',
             'pricing' => '120.000',
             'dificulty' => 'medium',
             'duration' => '13 Hours',
