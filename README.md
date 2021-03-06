@@ -39,17 +39,17 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
       composer install && composer upgarade
       ```
    3. Install node moduls untuk tailwind CSS<br/>
-       - Menggunakan NPM
+       Menggunakan NPM
        ```
        npm install && npm run dev
        ```
-       - Menggunakan YARN
+       Menggunakan YARN
        ```
        yarn && yarn run dev
        ```
    4. Buat database nyaa di phpmyadmin atau sejensinya<br/>
-        - Masukan username dan database name di  ``` .env ```<br/>
-        - Buka Command line<br/>
+        Masukan username dan database name di  ``` .env ```<br/>
+        Buka Command line<br/>
            ```
            cd PATH_TO_PROJECT
            ```
@@ -73,4 +73,4 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
 
 # 😎 Happy Coding And Learning
 ------------
-Made With ♥️ ANTO WIRANTO
+Project Owner by ♥️ ANTO WIRANTO
