@@ -19,8 +19,9 @@
         </div>
         <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
           <div class="form-group breadcrum-right d-flex">
-              <a href="#" class="btn btn-outline-primary">Previuse Eposode</a>
-              <a href="#" class="btn btn-primary">Next Episodes</a>
+              <a><i class="feather icon-help-circle text-lg mr-1"></i></a>
+              <a href="#" class="btn btn-outline-primary btn-sm mr-2">Previous Eposode</a>
+              <a href="#" class="btn btn-primary btn-sm">Next Episodes</a>
           </div>
         </div>
       </x-slot>
