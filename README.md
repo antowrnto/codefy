@@ -60,7 +60,7 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
         ```
         php artisan serve
         ```
-#  Bagaimana Caranya Jadi Administrator?
+# 👮 Bagaimana Caranya Jadi Administrator?
   1. Kalian dapfar dulu seperti biasa di ``` https://YOUR_DOMAIN.com/register```
   2. Kalian buka command line </br>
      ``` 
