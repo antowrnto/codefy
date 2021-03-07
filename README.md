@@ -60,11 +60,29 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
         ```
         php artisan serve
         ```
-        
+#  Bagaimana Caranya Jadi Administrator?
+  1. Kalian dapfar dulu seperti biasa di ``` https://YOUR_DOMAIN.com/register```
+  2. Kalian buka command line </br>
+     ``` 
+      php artisan tinker 
+     ``` 
+     ```
+     $user = User::find(YOUR_ID_IN_DATABASES)
+     ```
+     ```
+     $user->assignRole('administrator')
+     ```
+  3. Selanjutnya kalian refresh browser kalian.
+  4. Jika kalian tidak langsung redirect ke page role kalian access ``` https://YOUR_DOMAIN.com/administrator ```
+  
+  Dan sekarang anda adalah administrator.
+  
+  
 # ☑ Todo Task
 - [ ]    CRUD ALL DATA
 - [ ]    PAYMENT GATEAWAY
 - [ ]    INTEGRATION WITH MIDTRANS
+- [ ]    UPDATE DETAIL ACCOUNT USER
 - [ ]    TWO FACTOR AUTHENTICATION
 - [x]    RRELATIONSHIP TABLE DATABASE
 - [ ]    CHANGE UI PROFILE INFORMATION
