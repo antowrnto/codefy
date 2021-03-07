@@ -9,21 +9,25 @@ use Laravel\Scout\Searchable;
 class Course extends Model
 {
     use HasFactory;
-    //use Searchable;
+    use Searchable;
     
-    public function mentor(){
+    public function mentor()
+    {
     		return $this->belongsTo(User::class, 'mentor_id');
     }
     
-    public function series(){
+    public function series()
+    {
     		return $this->belongsTo(Series::class);
     }
     
-    public function episodes(){
+    public function episodes()
+    {
     		return $this->hasMany(Episode::class);
     }
     
-    public function students(){
+    public function students()
+    {
         return $this->belongsToMany(User::class,
         'course_joined_student',
         'course_id',

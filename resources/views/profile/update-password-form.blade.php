@@ -2,7 +2,7 @@
   $fade = "fade";
   if($errors->any()){
       $fade = "active";
-  }elseif($active){
+  }elseif($active == "active"){
       $fade = "active";
   }
 @endphp

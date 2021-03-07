@@ -40,15 +40,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->account->forceFill([
                 'username' => $account['username'],
                 'school' => $account['school'],
-                'bio' => $account['bio'],
-                'birth_day' => $account['birth_day'],
-                'city' => $account['city'],
-                'link_twitter' => $account['link_twitter'],
-                'link_facebook' => $account['link_facebook'],
-                'link_instagram' => $account['link_instagram'],
-                'link_linkedin' => $account['link_linkedin'],
-                'language' => $account['language'],
-                'role' => $account['role'],
             ])->save();
         }
     }
@@ -71,15 +62,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         $user->account->forceFill([
                 'username' => $account['username'],
                 'school' => $account['school'],
-                'bio' => $account['bio'],
-                'birth_day' => $account['birth_day'],
-                'city' => $account['city'],
-                'link_twitter' => $account['link_twitter'],
-                'link_facebook' => $account['link_facebook'],
-                'link_instagram' => $account['link_instagram'],
-                'link_linkedin' => $account['link_linkedin'],
-                'language' => $account['language'],
-                'role' => $account['role'],
             ])->save();
 
         $user->sendEmailVerificationNotification();

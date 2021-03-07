@@ -19,7 +19,7 @@ class UpdatePasswordForm extends Component
         'password_confirmation' => '',
     ];
     
-    public $fade = "";
+    public $active = "";
 
     /**
      * Update the user's password.
@@ -38,7 +38,7 @@ class UpdatePasswordForm extends Component
             'password' => '',
             'password_confirmation' => '',
         ];
-        $this->fade = "active";
+        $this->active = "active";
     }
 
     /**
@@ -58,8 +58,6 @@ class UpdatePasswordForm extends Component
      */
     public function render()
     {
-        return view('profile.update-password-form', [
-            'active' => $this->fade
-        ]);
+        return view('profile.update-password-form');
     }
 }
