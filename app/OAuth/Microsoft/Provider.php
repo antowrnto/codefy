@@ -16,10 +16,12 @@ class Provider extends AbstractProvider
 
     protected function getAuthUrl($state)
     {
-        return $this->buildAuthUrlFromBase(
+        $data = $this->buildAuthUrlFromBase(
             'https://login.microsoftonline.com/common/oauth2/v2.0/authorize',
             $state
         );
+        
+        return $data;
     }
 
     protected function getTokenUrl()
