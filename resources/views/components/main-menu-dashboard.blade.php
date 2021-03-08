@@ -27,20 +27,20 @@
                 
                 <li class=" navigation-header"><span>Management Data</span>
                 </li>
-                <li class=" nav-item"><a href=""><i class="feather icon-box"></i><span class="menu-title">Data Role</span></a>
+                <li class="nav-item {{ Request::segment(3) == 'role' ? 'active' : ' ' }}"><a href="{{ route('administrator.management.role') }}"><i class="feather icon-box"></i><span class="menu-title">Data Role</span></a>
                 </li>
-                <li class=" nav-item"><a href=""><i class="feather icon-package"></i><span class="menu-title">Data Mentor</span></a>
+                <li class="nav-item {{ Request::segment(3) == 'mentor' ? 'active' : ' ' }}"><a href="{{ route('administrator.management.mentor') }}"><i class="feather icon-package"></i><span class="menu-title">Data Mentor</span></a>
                 </li>
-                <li class=" nav-item"><a href=""><i class="feather icon-check-circle"></i><span class="menu-title">Data Student</span></a>
+                <li class="nav-item {{ Request::segment(3) == 'student' ? 'active' : ' ' }}"><a href="{{ route('administrator.management.student') }}"><i class="feather icon-check-circle"></i><span class="menu-title">Data Student</span></a>
                 </li>
-                <li class=" nav-item"><a href=""><i class="feather icon-server"></i><span class="menu-title">Data Series</span></a>
+                <li class="nav-item {{ Request::segment(3) == 'series' ? 'active' : ' ' }}"><a href="{{ route('administrator.management.series') }}"><i class="feather icon-server"></i><span class="menu-title">Data Series</span></a>
                 </li>
-                <li class=" nav-item"><a href=""><i class="feather icon-grid"></i><span class="menu-title">Data Courses</span></a>
+                <li class="nav-item {{ Request::segment(3) == 'course' ? 'active' : ' ' }}"><a href="{{ route('administrator.management.course') }}"><i class="feather icon-grid"></i><span class="menu-title">Data Courses</span></a>
                 </li>
-                <li class=" nav-item"><a href=""><i class="feather icon-grid"></i><span class="menu-title">Data Episodes</span></a>
+                <li class="nav-item {{ Request::segment(3) == 'episode' ? 'active' : ' ' }}"><a href="{{ route('administrator.management.episode') }}"><i class="feather icon-grid"></i><span class="menu-title">Data Episodes</span></a>
                 </li>
                 
-                <li class=" navigation-header"><span>Extensions</span>
+                {{--<li class=" navigation-header"><span>Extensions</span>
                 </li>
                 <li class=" nav-item"><a href="ext-component-sweet-alerts.html"><i class="feather icon-alert-circle"></i><span class="menu-title" data-i18n="Sweet Alert">Sweet Alert</span></a>
                 </li>
@@ -65,7 +65,7 @@
                 <li class=" nav-item"><a href="ext-component-swiper.html"><i class="feather icon-smartphone"></i><span class="menu-title" data-i18n="swiper">swiper</span></a>
                 </li>
                 <li class=" nav-item"><a href="ext-component-i18n.html"><i class="feather icon-globe"></i><span class="menu-title" data-i18n="l18n">l18n</span></a>
-                </li>
+                </li>--}}
 
                 <li class=" navigation-header"><span>Support</span>
                 </li>
@@ -114,7 +114,7 @@
                 <li class=" nav-item"><a href=""><i class="feather icon-grid"></i><span class="menu-title">Data Episodes</span></a>
                 </li>
                 
-                <li class=" navigation-header"><span>Extensions</span>
+                {{--<li class=" navigation-header"><span>Extensions</span>
                 </li>
                 <li class=" nav-item"><a href="ext-component-sweet-alerts.html"><i class="feather icon-alert-circle"></i><span class="menu-title" data-i18n="Sweet Alert">Sweet Alert</span></a>
                 </li>
@@ -139,7 +139,7 @@
                 <li class=" nav-item"><a href="ext-component-swiper.html"><i class="feather icon-smartphone"></i><span class="menu-title" data-i18n="swiper">swiper</span></a>
                 </li>
                 <li class=" nav-item"><a href="ext-component-i18n.html"><i class="feather icon-globe"></i><span class="menu-title" data-i18n="l18n">l18n</span></a>
-                </li>
+                </li>--}}
 
                 <li class=" navigation-header"><span>Support</span>
                 </li>
