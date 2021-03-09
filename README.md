@@ -1,7 +1,6 @@
 
 <p align="center">
 <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square">
-
 </p>
 
 
@@ -91,7 +90,8 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
 - [ ]    LANDING PAGE
 
 # 😎 Happy Coding And Learning
------------
-## Please give me start for support🙏
+
 ------------
+Give Me Star For Support <br/>
+Lets Contribute In This Repo<br/>
 Project Owner by ♥️ ANTO WIRANTO

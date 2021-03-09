@@ -1,2 +1,2 @@
 language = "php7"
-run = "npm install"
+run = "php artisan serve"
