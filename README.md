@@ -86,7 +86,7 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
 - [ ]    TWO FACTOR AUTHENTICATION
 - [x]    RRELATIONSHIP TABLE DATABASE
 - [ ]    CHANGE UI PROFILE INFORMATION
-- [ ]    FOLLOWABLE USER
+- [x]    FOLLOWABLE USER
 - [ ]    CREATE POST USER
 
 # 😎 Happy Coding And Learning
