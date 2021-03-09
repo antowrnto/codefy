@@ -14,6 +14,11 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('welcome');
+        return view('landing.welcome');
+    }
+    
+    public function about()
+    {
+        return view('landing.about');
     }
 }

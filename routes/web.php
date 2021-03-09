@@ -13,19 +13,11 @@ use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EpisodeController;
 
-Route::get('/quiz', function(){
-  $response = Http::get('https://quizapi.io/api/v1/questions', [
-      'apiKey' => 'SwoOw0vIUY5FIlNnnMIqT4E4pbIMa6Fon67Xxisp',
-      'limit' => 10,
-  ]);
-  
-  dd($response->json());
-});
-
 Route::get('learn', function(){
   return view('learning');
 });
 Route::get('/', HomeController::class);
+Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('redirect', ResponseRedirectHomeController::class);
 
 Route::get('auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
