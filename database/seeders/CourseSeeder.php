@@ -14,6 +14,6 @@ class CourseSeeder extends Seeder
      */
     public function run()
     {
-        Course::factory(150)->create();
+        Course::factory(10)->create();
     }
 }

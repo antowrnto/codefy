@@ -22,7 +22,6 @@
         "sentry/sentry-laravel": "^2.3",
         "socialiteproviders/manager": "^4.0",
         "spatie/flysystem-dropbox": "^1.2",
-        "spatie/laravel-medialibrary": "^7.19",
         "spatie/laravel-permission": "^4.0",
         "spatie/pdf-to-image": "^2.1"
     },

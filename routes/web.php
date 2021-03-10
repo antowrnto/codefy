@@ -13,9 +13,10 @@ use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EpisodeController;
 
-Route::get('learn', function(){
-  return view('learning');
+Route::get('filepond', function(){
+  return view('filepond');
 });
+
 Route::get('/', HomeController::class);
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('redirect', ResponseRedirectHomeController::class);
@@ -56,11 +57,21 @@ Route::middleware(['auth:sanctum', 'verified', 'role:administrator'])->prefix('d
 
       Route::prefix('destroy')->group(function(){
         Route::delete('series/{series:slug}', [SeriesController::class, 'destroy'])->name('administrator.destroy.series');
+        Route::delete('course/{course:slug}', [CourseController::class, 'destroy'])->name('administrator.destroy.course');
       });
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'role:mentor'])->prefix('mentor')->group(function () {
     Route::get('/', DashboardController::class)->name('dashboard.mentor');
+      Route::prefix('management')->group(function(){
+        Route::get('student', [StudentController::class, 'index'])->name('mentor.management.student');
+        Route::get('course', [CourseController::class, 'index'])->name('mentor.management.course');
+        Route::get('episode', [EpisodeController::class, 'index'])->name('mentor.management.episode');
+      });
+      
+      Route::prefix('destroy')->group(function(){
+        Route::delete('course/{course:slug}', [CourseController::class, 'destroy'])->name('mentor.destroy.course');
+      });
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'role:student'])->prefix('student')->group(function () {

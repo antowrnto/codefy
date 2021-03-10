@@ -14,10 +14,12 @@ class CourseJoinedStudentSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(50)->create();
-        
+        User::factory(5)->create();
+        //$url = 'https://source.unsplash.com/random';
         foreach (Course::all() as $course) {
-          $users = User::inRandomOrder()->take(rand(2, 50))->pluck('id');
+          $users = User::inRandomOrder()->take(rand(2, 5))->pluck('id');
+          //$course->addMediaFromUrl($url)
+          //   ->toMediaCollection('thumbnails');
           $course->students()->attach($users);
         }
     }
