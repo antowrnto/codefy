@@ -43,7 +43,7 @@ new Dropzone(document.body, { // Make the whole body a dropzone
 ****************************************************************/
 Dropzone.options.dpzFileLimits = {
   paramName: "file", // The name that will be used to transfer the file
-  maxFilesize: 0.5, // MB
+  maxFilesize: 0.5, //
   maxFiles: 5,
   maxThumbnailFilesize: 1, // MB
 }
@@ -53,8 +53,9 @@ Dropzone.options.dpzFileLimits = {
 *               Accepted Files              *
 ********************************************/
 Dropzone.options.dpAcceptFiles = {
-  paramName: "file", // The name that will be used to transfer the file
-  maxFilesize: 1, // MB
+  url: '/upload',
+  paramName: "file", 
+  maxFilesize: 10, 
   acceptedFiles: 'image/*'
 }
 

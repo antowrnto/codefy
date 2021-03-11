@@ -17,13 +17,7 @@ class DropboxServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Storage::extend('dropbox', function ($app, $config) {
-          $client = new DropboxClient(
-              $config['authorizationToken']
-          );
-        
-          return new Filesystem(new DropboxAdapter($client));
-        });
+        //
     }
 
     /**
@@ -33,6 +27,12 @@ class DropboxServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+      Storage::extend('dropbox', function ($app, $config) {
+          $client = new DropboxClient(
+              $config['authorizationToken']
+          );
+        
+          return new Filesystem(new DropboxAdapter($client));
+        });
     }
 }

@@ -13,8 +13,27 @@ use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EpisodeController;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
+
 Route::get('filepond', function(){
   return view('filepond');
+});
+
+Route::get('storage', function(){
+  $data = \Storage::disk('google')->put('test.txt', 'Hello Word');
+  dd($data);
+});
+
+Route::post('upload', function(Request $request){
+  $file = $request->file('thumbnail');
+  $fileExtension = $file->getClientOriginalExtension();
+  $name = 'images.'.$fileExtension;
+  //disk('dropbox')
+  Storage::putFileAs('public/upload/', $file, $name);
+  //$this->dropbox->createSharedLinkWithSettings('public/upload/'.$name);
+  return redirect()->back();
 });
 
 Route::get('/', HomeController::class);

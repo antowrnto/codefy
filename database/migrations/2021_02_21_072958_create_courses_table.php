@@ -28,7 +28,7 @@ class CreateCoursesTable extends Migration
             $table->foreignId('mentor_id');
             $table->foreign('series_id')->references('id')->on('series')->onDelete('cascade');
             $table->foreign('mentor_id')->references('id')->on('users')->onDelete('cascade');
-                    
+
             $table->timestamps();
         });
     }
