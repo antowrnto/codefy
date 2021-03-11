@@ -16,10 +16,13 @@ class CourseJoinedStudentSeeder extends Seeder
     {
         User::factory(5)->create();
         //$url = 'https://source.unsplash.com/random';
+        $url = 'http://medialibrary.spatie.be/assets/images/mountain.jpg';
         foreach (Course::all() as $course) {
           $users = User::inRandomOrder()->take(rand(2, 5))->pluck('id');
-          //$course->addMediaFromUrl($url)
-          //   ->toMediaCollection('thumbnails');
+          \Storage::disk('google')->put($course->slug . '.txt', $course);
+          //dd(\Storage::disk('google')->url($course->slug . '.txt'));
+          //$course->addMedia(\Storage::disk('google')->url($course->slug . '.txt'))
+          //   ->toMediaCollection('data');
           $course->students()->attach($users);
         }
     }

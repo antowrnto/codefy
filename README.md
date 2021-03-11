@@ -88,6 +88,10 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
 - [x]    FOLLOWABLE USER
 - [ ]    CREATE POST USER
 - [ ]    LANDING PAGE
+- [x]    FILE SYSTEM GOOGLE DRIVE
+
+# Harus Di Perbaiki
+- [ ]    File System Dropbox
 
 # 😎 Happy Coding And Learning
 
