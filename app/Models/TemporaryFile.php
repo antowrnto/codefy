@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class TemporaryFile extends Model
 {
     use HasFactory;
+    
+    protected $fillable = ['folder_name', 'file_name', 'file_link'];
 }

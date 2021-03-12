@@ -41,10 +41,6 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
-$app->bind(
-  \PrivateIT\FlySystem\GoogleDrive\PathManager::class, 
-  \PrivateIT\FlySystem\GoogleDrive\GoogleSheetsPathManager::class
-);
 
 /*
 |--------------------------------------------------------------------------
