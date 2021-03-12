@@ -10,21 +10,21 @@
 
 <body>
 
-  <form method="post" action="/upload" enctype="multipart/form-data">
+  <form method="post" action="/uploadToTemporary" enctype="multipart/form-data">
     @csrf
     <label for="thumbnail">Upload File</label>
     <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
-    <button type="submit">Submit</button>
+    <button type="submit">submit</button>
   </form>
 
 <script src="/assets/vendors/filepond/dist/filepond.js"></script>
 <script>
-  const inputElement = document.querySelector('input[type="file"]');
-  const pond = FilePond.create( inputElement );
+  //const inputElement = document.querySelector('input[type="file"]');
+  //const pond = FilePond.create( inputElement );
   
   FilePond.setOptions({
       server: {
-        url: '/upload',
+        url: '/uploadToTemporary',
         headers: {
           'X-CSRF-TOKEN': '{{ csrf_token() }}'
         }

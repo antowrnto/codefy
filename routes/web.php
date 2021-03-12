@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\ResponseRedirectHomeController;
+use App\Http\Controllers\TemporarySystemController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\StudentController;
@@ -13,33 +13,12 @@ use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EpisodeController;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-
-
-Route::get('filepond', function(){
-  return view('filepond');
-});
-
-Route::get('storage', function(){
-  $data = \Storage::disk('google')->put('test.txt', 'Hello Word');
-  dd($data);
-});
-
-Route::post('upload', function(Request $request){
-  $file = $request->file('thumbnail');
-  $fileExtension = $file->getClientOriginalExtension();
-  $name = 'images.'.$fileExtension;
-  //disk('dropbox')
-  Storage::putFileAs('public/upload/', $file, $name);
-  //$this->dropbox->createSharedLinkWithSettings('public/upload/'.$name);
-  return redirect()->back();
-});
+Route::view('filepond', 'filepond');
 
 Route::get('/', HomeController::class);
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('redirect', ResponseRedirectHomeController::class);
-
+Route::post('uploadToTemporary', TemporarySystemController::class)->name('upload.temporary');
 Route::get('auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
 Route::get('auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
 
