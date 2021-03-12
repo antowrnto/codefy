@@ -87,7 +87,7 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
 - [ ]    CHANGE UI PROFILE INFORMATION
 - [x]    FOLLOWABLE USER
 - [ ]    CREATE POST USER
-- [ ]    LANDING PAGE
+- [x]    LANDING PAGE
 - [x]    FILE SYSTEM GOOGLE DRIVE
 
 # 💤 Harus Di Perbaiki
