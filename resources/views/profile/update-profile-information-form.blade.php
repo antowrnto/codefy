@@ -39,7 +39,7 @@
     <hr>
         <div class="row">
           <div class="col-12">
-            @if($messageSend)
+            @if($messageSend ?? '')
               <x-alert-session message="Your profile has been updated to new data"/>
             @endif
           </div>

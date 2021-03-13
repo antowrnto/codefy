@@ -2,7 +2,7 @@
   $fade = "fade";
   if($errors->any()){
       $fade = "active";
-  }elseif($active == "active"){
+  }elseif($active ?? '' == "active"){
       $fade = "active";
   }
 @endphp
@@ -10,7 +10,7 @@
     <form wire:submit.prevent="updatePassword" novalidate>
         <div class="row">
           <div class="col-12">
-            @if($active)
+            @if($active ?? '')
               <x-alert-session message="Your password has been updated to new password"/>
             @endif
           </div>

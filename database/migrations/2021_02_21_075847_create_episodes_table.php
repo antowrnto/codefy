@@ -21,7 +21,6 @@ class CreateEpisodesTable extends Migration
             $table->string('duration');
             $table->string('url_video');
             $table->foreignId('course_id');
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -23,11 +23,10 @@ class CreateCoursesTable extends Migration
             $table->string('data');
             $table->string('pricing');
             $table->string('dificulty');
+            $table->string('thumbnail');
             $table->string('duration')->nullable();
             $table->foreignId('series_id');
             $table->foreignId('mentor_id');
-            $table->foreign('series_id')->references('id')->on('series')->onDelete('cascade');
-            $table->foreign('mentor_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });

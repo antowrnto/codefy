@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Course;
+
 
 class HomeController extends Controller
 {
@@ -14,7 +16,9 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('landing.welcome');
+        return view('landing.welcome', [
+          'courses' => Course::take(3)->latest()->get()
+        ]);
     }
     
     public function about()

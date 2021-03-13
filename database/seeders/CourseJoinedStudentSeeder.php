@@ -19,8 +19,6 @@ class CourseJoinedStudentSeeder extends Seeder
         //$url = 'http://medialibrary.spatie.be/assets/images/mountain.jpg';
         foreach (Course::all() as $course) {
           $users = User::inRandomOrder()->take(rand(2, 5))->pluck('id');
-          $course->addMediaFromUrl($url)
-             ->toMediaCollection('thumbnail');
           $course->students()->attach($users);
         }
     }

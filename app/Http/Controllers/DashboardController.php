@@ -26,7 +26,7 @@ class DashboardController extends Controller
               
             case 'mentor':
               $this->countDataCourses = Auth::user()->courseMentors->count();
-              $this->countDataUsers   = null;
+              $this->countDataUsers   = [];
               break;
               
             case 'student':
@@ -34,7 +34,7 @@ class DashboardController extends Controller
               break;
             
             default:
-              $this->countDataCourses = null;
+              $this->countDataCourses = [];
               break;
           }
         return $next($request);
@@ -81,21 +81,17 @@ class DashboardController extends Controller
     
     private function _getChartDataCourses()
     {
-        $course = Course::select(DB::raw("COUNT(created_at) as count"))
-                              ->whereYear('created_at', date('Y'))
-                              ->groupBy(DB::raw("Month(created_at)"))
-                              ->pluck('count');
-        
-        return $course;
+        return Course::select(DB::raw("COUNT(created_at) as count"))
+                          ->whereYear('created_at', date('Y'))
+                          ->groupBy(DB::raw("Month(created_at)"))
+                          ->pluck('count');
     }
     
     private function _getChartDataUsers()
     {
-        $users = User::select(DB::raw("COUNT(created_at) as count"))
-                              ->whereYear('created_at', date('Y'))
-                              ->groupBy(DB::raw("Month(created_at)"))
-                              ->pluck('count');
-
-        return $users;
+        return User::select(DB::raw("COUNT(created_at) as count"))
+                          ->whereYear('created_at', date('Y'))
+                          ->groupBy(DB::raw("Month(created_at)"))
+                          ->pluck('count');
     }
 }

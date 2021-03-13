@@ -287,7 +287,7 @@
           <p class="lead mb-5">We use the latest technologies it voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
         </div>
         <div class="d-flex align-items-center">
-          <img alt="Image" src="assets/landing/images/testimonial/01.jpg" class="shadow-primary img-fluid rounded-circle d-inline mr-3">
+          <img alt="Image" src="/assets/images/portrait/small/avatar-s-25.jpg" class="shadow-primary img-fluid rounded-circle d-inline mr-3">
           <div>
             <h5>Anto Wiranto</h5>
             <span class="text-muted">Software Developer & Creator Codefy</span>
@@ -570,17 +570,16 @@
     </div>
     <!-- / .row -->
     <div class="row">
+      @foreach($courses as $course)
       <div class="col-12 col-lg-4 mb-6 mb-lg-0">
-        <!-- Blog Card -->
         <div class="card border-0 bg-transparent">
-          <div class="position-absolute bg-white shadow-primary text-center p-2 rounded ml-3 mt-3">15
-            <br>July</div>
-          <img class="card-img-top shadow rounded" src="assets/landing/images/blog/01.png" alt="Image">
-          <div class="card-body pt-5"> <a class="d-inline-block text-muted mb-2" href="#">Sass</a>
+          <div class="position-absolute bg-white shadow-primary text-center p-2 rounded ml-3 mt-3">{{ $course->mentor->name }}</div>
+          <img class="card-img-top shadow rounded" src="/assets/landing/images/blog/01.png" alt="Image">
+          <div class="card-body pt-5"> <a class="d-inline-block text-muted mb-2" href="#">{{ $course->programming_Language }}</a>
             <h2 class="h5 font-weight-medium">
-                <a class="link-title" href="blog-single.html">Codefy Perfect Performance landing Page</a>
+                <a class="link-title" href="#">{{ $course->title }}</a>
               </h2>
-            <p>Businesses need access to development resources serspiciatis unde omnis iste natus error.</p>
+            <p>{{ Str::limit($course->description, 150) }}</p>
           </div>
           <div class="card-footer bg-transparent border-0 pt-0">
             <ul class="list-inline mb-0">
@@ -594,60 +593,8 @@
           </div>
           <div></div>
         </div>
-        <!-- End Blog Card -->
       </div>
-      <div class="col-12 col-lg-4 mb-6 mb-lg-0">
-        <!-- Blog Card -->
-        <div class="card border-0 bg-transparent">
-          <div class="position-absolute bg-white shadow-primary text-center p-2 rounded ml-3 mt-3">15
-            <br>July</div>
-          <img class="card-img-top shadow rounded" src="assets/landing/images/blog/02.png" alt="Image">
-          <div class="card-body pt-5"> <a class="d-inline-block text-muted mb-2" href="#">Marketing</a>
-            <h2 class="h5 font-weight-medium">
-                <a class="link-title" href="blog-single.html">The most powerfull template that make you.</a>
-              </h2>
-            <p>Businesses need access to development resources serspiciatis unde omnis iste natus error.</p>
-          </div>
-          <div class="card-footer bg-transparent border-0 pt-0">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item pr-4"> <a href="#" class="text-muted"><i class="ti-comments mr-1 text-primary"></i> 131</a>
-              </li>
-              <li class="list-inline-item pr-4"> <a href="#" class="text-muted"><i class="ti-eye mr-1 text-primary"></i> 255</a>
-              </li>
-              <li class="list-inline-item"> <a href="#" class="text-muted"><i class="ti-comments mr-1 text-primary"></i> 14</a>
-              </li>
-            </ul>
-          </div>
-          <div></div>
-        </div>
-        <!-- End Blog Card -->
-      </div>
-      <div class="col-12 col-lg-4">
-        <!-- Blog Card -->
-        <div class="card border-0 bg-transparent">
-          <div class="position-absolute bg-white shadow-primary text-center p-2 rounded ml-3 mt-3">15
-            <br>July</div>
-          <img class="card-img-top shadow rounded" src="assets/landing/images/blog/03.png" alt="Image">
-          <div class="card-body pt-5"> <a class="d-inline-block text-muted mb-2" href="#">Landing</a>
-            <h2 class="h5 font-weight-medium">
-                <a class="link-title" href="blog-single.html">A brand for a company is like a reputation person.</a>
-              </h2>
-            <p>Businesses need access to development resources serspiciatis unde omnis iste natus error.</p>
-          </div>
-          <div class="card-footer bg-transparent border-0 pt-0">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item pr-4"> <a href="#" class="text-muted"><i class="ti-comments mr-1 text-primary"></i> 131</a>
-              </li>
-              <li class="list-inline-item pr-4"> <a href="#" class="text-muted"><i class="ti-eye mr-1 text-primary"></i> 255</a>
-              </li>
-              <li class="list-inline-item"> <a href="#" class="text-muted"><i class="ti-comments mr-1 text-primary"></i> 14</a>
-              </li>
-            </ul>
-          </div>
-          <div></div>
-        </div>
-        <!-- End Blog Card -->
-      </div>
+      @endforeach
     </div>
   </div>
 </section>

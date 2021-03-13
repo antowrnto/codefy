@@ -21,6 +21,7 @@ class CourseFactory extends Factory
      */
     public function definition()
     {
+      $url = 'https://source.unsplash.com/random';
         return [
             'title' => $this->faker->text(65),
             'slug' => $this->faker->slug(15),
@@ -30,6 +31,7 @@ class CourseFactory extends Factory
             'data' => '{null}',
             'type_course' => 'interactive',
             'pricing' => '120.000',
+            'thumbnail' => $url,
             'dificulty' => 'medium',
             'duration' => '13 Hours',
             'series_id' => rand(1, 15),
