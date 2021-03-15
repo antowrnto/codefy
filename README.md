@@ -59,39 +59,6 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
         ```
         php artisan serve
         ```
-# Jika kalian ada error di user profile
-jika kalian menemukan erorr di page user profile maka kalian harus :
-1. Buka file vendor/laravel/jetsream/src/JetstreamServiceProvider.php
-   Ganti Pada bagian use dari
-  ```
-  use Laravel\Jetstream\Http\Livewire\ApiTokenManager;
-  use Laravel\Jetstream\Http\Livewire\CreateTeamForm;
-  use Laravel\Jetstream\Http\Livewire\DeleteTeamForm;
-  use Laravel\Jetstream\Http\Livewire\DeleteUserForm;
-  use Laravel\Jetstream\Http\Livewire\LogoutOtherBrowserSessionsForm;
-  use Laravel\Jetstream\Http\Livewire\NavigationDropdown;
-  use Laravel\Jetstream\Http\Livewire\TeamMemberManager;
-  use Laravel\Jetstream\Http\Livewire\TwoFactorAuthenticationForm;
-  use Laravel\Jetstream\Http\Livewire\UpdatePasswordForm;
-  use Laravel\Jetstream\Http\Livewire\UpdateProfileInformationForm;
-  use Laravel\Jetstream\Http\Livewire\UpdateTeamNameForm;
-  ```
-   Menjadi
-   ```
-   use App\Http\Livewire\ApiTokenManager;
-   use App\Http\Livewire\CreateTeamForm;
-   use App\Http\Livewire\DeleteTeamForm;
-   use App\Http\Livewire\DeleteUserForm;
-   use App\Http\Livewire\LogoutOtherBrowserSessionsForm;
-   use App\Http\Livewire\NavigationDropdown;
-   use App\Http\Livewire\TeamMemberManager;
-   use App\Http\Livewire\TwoFactorAuthenticationForm;
-   use App\Http\Livewire\UpdatePasswordForm;
-   use App\Http\Livewire\UpdateProfileInformationForm;
-   use App\Http\Livewire\UpdateTeamNameForm;
-   ```
-Untuk Saat Ini Metode Ini yang dapat menghandle error itu <br/>
-Jika kalian ada teknik yang lebih baik kalian bisa contibusi dan meng merge kode kalian <br/>
 
 # 👮 Bagaimana Caranya Jadi Administrator?
   1. Kalian dapfar dulu seperti biasa di ``` https://YOUR_DOMAIN.com/register```
