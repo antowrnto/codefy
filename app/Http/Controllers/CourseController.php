@@ -2,27 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use App\Models\Course;
+use App\Models\Series;
+use App\Models\User;
 
 class CourseController extends Controller
 {
     public $courses;
+    public $mentor;
     
     public function __construct(){
         $this->middleware(function ($request, $next) {
             switch (Auth::user()->roles[0]->name) {
               case 'administrator':
                 $this->courses = Course::all();
+                $this->mentor = User::role('mentor')->get();
                 break;
                 
               case 'mentor':
                 $this->courses = Auth::user()->courseMentors;
+                $this->mentor = User::role('mentor')->where('email', Auth::user()->email)->get();
                 break;
               
               default:
                 $this->courses = [];
+                $this->mentor = [];
                 break;
             }
           return $next($request);
@@ -47,7 +53,10 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('management.course.create', [
+          'mentors' => $this->mentor,
+          'series'  => Series::all()
+        ]);
     }
 
     /**
@@ -58,7 +67,7 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**

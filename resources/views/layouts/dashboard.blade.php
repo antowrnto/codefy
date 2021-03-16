@@ -11,7 +11,7 @@
     <meta name="author" content="PIXINVENT">
     <meta name="creator" content="Anto Wiranto">
 
-    <title>Dashboard analytics - Vuexy - Bootstrap HTML admin template</title>
+    <title>{{ $title ?? config('app.name') }} - Codefy - Leraning coding</title>
     
     <link rel="apple-touch-icon" href="{{ asset('images/ico/apple-icon-120.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/ico/favicon.ico') }}">
@@ -20,6 +20,8 @@
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/vendors.min.css') }}">
     {{ $vendor_style ?? null }}
+    <link href="/assets/vendors/filepond/dist/filepond.css" rel="stylesheet" />
+    <script src="/assets/vendors/filepond/dist/filepond.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/animate/animate.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/extensions/sweetalert2.min.css') }}">
     <!-- END: Vendor CSS-->
@@ -47,7 +49,7 @@
 
 <!-- BEGIN: Body-->
 
-<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+<body class="vertical-layout vertical-menu-modern {{ Auth::user()->dark_mode ? 'dark-layout' : ' ' }} 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" {{ Auth::user()->dark_mode ? 'data-layout="dark-layout"' : ' ' }}>
 
     <!-- BEGIN: Header-->
     <livewire:header-dashboard/>

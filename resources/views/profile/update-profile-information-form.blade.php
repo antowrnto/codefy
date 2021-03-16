@@ -5,12 +5,12 @@
     @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
     <div x-data="{photoName: null, photoPreview: null}" class="media">
         <div x-show="! photoPreview">
-            <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}" class="rounded mr-75" height="64" width="64">
+            <img src="{{ storage_path($this->user->profile_photo_path) }}" alt="{{ $this->user->name }}" class="rounded mr-75" height="64" width="64">
         </div>
         <div class="media-body mt-75">
             <div class="col-12 px-0 d-flex flex-sm-row flex-column justify-content-start">
                 <label class="btn btn-sm btn-primary ml-50 mb-50 mb-sm-0 cursor-pointer" for="account-upload" x-on:click.prevent="$refs.photo.click()">Upload new photo</label>
-                <input type="file" id="account-upload" hidden
+                <input type="file" id="account-upload" hidden accept="image/*"
                       wire:model="photo"
                       x-ref="photo"
                       x-on:change="

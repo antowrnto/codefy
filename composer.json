@@ -22,7 +22,8 @@
         "sentry/sentry-laravel": "^2.3",
         "socialiteproviders/manager": "^4.0",
         "spatie/flysystem-dropbox": "^1.2",
-        "spatie/laravel-permission": "^4.0"
+        "spatie/laravel-permission": "^4.0",
+        "superbalist/laravel-google-cloud-storage": "^2.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
@@ -59,7 +60,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan codefy:setup"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

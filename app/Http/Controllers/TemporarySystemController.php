@@ -8,11 +8,6 @@ use App\Models\TemporaryFile;
 
 class TemporarySystemController extends Controller
 {
-    public function __construct()
-    {
-        $this->dropbox = Storage::disk('dropbox')->getDriver()->getAdapter()->getClient();
-    }
-
     /**
      * Handle the incoming request.
      *
@@ -21,21 +16,20 @@ class TemporarySystemController extends Controller
      */
     public function __invoke(Request $request)
     {
-        if ($request->hasFile('thumbnail')) {
-          $file = $request->file('thumbnail');
+        if ($request->hasFile('thumbnail-image')) {
+          $file = $request->file('thumbnail-image');
           $name = $file->getClientOriginalName();
           $folder = 'temp/' . uniqid() . '-' . now()->timestamp;
-          Storage::disk('dropbox')->putFileAs($folder, $file, $name);
-          $this->dropbox->createSharedLinkWithSettings($folder . '/' . $name);
-          $link = $this->dropbox->listSharedLinks($folder . '/' . $name);
+          Storage::disk('gcs')->putFileAs($folder, $file, $name);
+          $link = Storage::disk('gcs')->url($folder . '/' . $name);
           
           TemporaryFile::create([
               'folder_name' => $folder,
               'file_name' => $name,
-              'file_link' => $link[0]['url'],
+              'file_link' => $link,
           ]);
           
-          return $folder;
+          return array("folder" => $folder, "name" => $name);
         }
         
       return '';

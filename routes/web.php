@@ -18,7 +18,7 @@ Route::view('filepond', 'filepond');
 Route::get('/', HomeController::class);
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('redirect', ResponseRedirectHomeController::class);
-Route::post('uploadToTemporary', TemporarySystemController::class)->name('upload.temporary');
+Route::post('upload', TemporarySystemController::class)->name('upload.temporary');
 Route::get('auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
 Route::get('auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
 
@@ -34,11 +34,14 @@ Route::middleware(['auth:sanctum', 'verified', 'role:administrator'])->prefix('d
       });
       
       Route::prefix('create')->group(function(){
-        //
+        Route::get('course', [CourseController::class, 'create'])->name('administrator.create.course');
+        Route::get('episode', [EpisodeController::class, 'create'])->name('administrator.create.episode');
       });
       
       Route::prefix('store')->group(function(){
         Route::post('series', [SeriesController::class, 'store'])->name('administrator.store.series');
+        Route::post('course', [CourseController::class, 'store'])->name('administrator.store.course');
+        Route::post('episode', [EpisodeController::class, 'store'])->name('administrator.store.episode');
       });
 
       Route::prefix('detail')->group(function(){
@@ -65,6 +68,16 @@ Route::middleware(['auth:sanctum', 'verified', 'role:mentor'])->prefix('mentor')
         Route::get('student', [StudentController::class, 'index'])->name('mentor.management.student');
         Route::get('course', [CourseController::class, 'index'])->name('mentor.management.course');
         Route::get('episode', [EpisodeController::class, 'index'])->name('mentor.management.episode');
+      });
+      
+      Route::prefix('create')->group(function(){
+        Route::get('course', [CourseController::class, 'create'])->name('mentor.create.course');
+        Route::get('episode', [EpisodeController::class, 'create'])->name('mentor.create.episode');
+      });
+      
+      Route::prefix('store')->group(function(){
+        Route::post('course', [CourseController::class, 'store'])->name('mentor.store.course');
+        Route::post('episode', [EpisodeController::class, 'store'])->name('mentor.store.episode');
       });
       
       Route::prefix('destroy')->group(function(){

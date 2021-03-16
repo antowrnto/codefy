@@ -71,11 +71,11 @@
                           <td>{{ $course->created_at->diffForHumans() }}</td>
                           <td class="d-flex">
                             <a href="#"><i class="fa fa-edit"></i></a>
-                            <a href="#"><i class="fa fa-eye"></i></a>
+                            <a href="#"><i class="fa fa-eye mx-1"></i></a>
                             <form class="form-delete" action="{{ Auth::user()->roles[0]->name == 'administrator' ? route('administrator.destroy.course', $course->slug) : route('mentor.destroy.course', $course->slug)  }}" method="POST">
                               @csrf
                               @method('DELETE')
-                                <a href="#"><i class="fa fa-trash mx-1 swall-delete" data-title="{{ $course->title }}"></i></a>
+                                <a href="#"><i class="fa fa-trash swall-delete" data-title="{{ $course->title }}"></i></a>
                             </form>
                           </td>
                         </tr>

@@ -10,7 +10,7 @@
 
 <body>
 
-  <form method="post" action="/uploadToTemporary" enctype="multipart/form-data">
+  <form method="post" action="/upload" enctype="multipart/form-data">
     @csrf
     <label for="thumbnail">Upload File</label>
     <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
@@ -24,7 +24,7 @@
   
   FilePond.setOptions({
       server: {
-        url: '/uploadToTemporary',
+        url: '/upload',
         headers: {
           'X-CSRF-TOKEN': '{{ csrf_token() }}'
         }
