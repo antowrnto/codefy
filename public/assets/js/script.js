@@ -46,3 +46,5 @@ $(document).on('click', '.swall-delete', function (e) {
       }
     })
   });
+  
+  

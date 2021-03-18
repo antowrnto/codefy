@@ -92,9 +92,9 @@
   <x-slot name="page_script">
     <script>
 				
-				const inputElement = document.querySelector('input[type="file"]');
-     const pond = FilePond.create( inputElement );
-  
+			const inputElement = document.querySelector('input[type="file"]');
+      const pond = FilePond.create( inputElement );
+      //FilePond.registerPlugin(FilePondPluginImagePreview);
       FilePond.setOptions({
           server: {
             url: '/upload',
@@ -106,8 +106,11 @@
       
       tinymce.init({ 
 		      selector: 'textarea',
-		      skin: 'oxide-dark', 
-		      content_css: 'dark',
+		      @if(Auth::user()->dark_mode)
+		         skin: 'oxide-dark', 
+		         content_css: 'dark',
+		      @endif
+		      height: '480',
 		      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
 		      toolbar_mode: 'floating',
 						 

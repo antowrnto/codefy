@@ -1,5 +1,5 @@
 <div>
-        <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu floating-nav {{ Auth::user()->dark_mode ? 'navbar_dark' : 'navbar_light' }} navbar-shadow">
+        <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu floating-nav {{ Auth::user()->dark_mode ? 'navbar-dark' : 'navbar-light' }} navbar-shadow">
         <div class="navbar-wrapper">
             <div class="navbar-container content">
                 <div class="navbar-collapse" id="navbar-mobile">

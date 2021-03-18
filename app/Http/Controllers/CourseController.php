@@ -17,13 +17,13 @@ class CourseController extends Controller
         $this->middleware(function ($request, $next) {
             switch (Auth::user()->roles[0]->name) {
               case 'administrator':
-                $this->courses = Course::all();
-                $this->mentor = User::role('mentor')->get();
+                $this->courses = Course::with('mentor', 'series', 'episodes')->get();
+                $this->mentor = User::role('mentor')->with('courseMentors')->get();
                 break;
                 
               case 'mentor':
                 $this->courses = Auth::user()->courseMentors;
-                $this->mentor = User::role('mentor')->where('email', Auth::user()->email)->get();
+                $this->mentor = Auth::user();
                 break;
               
               default:

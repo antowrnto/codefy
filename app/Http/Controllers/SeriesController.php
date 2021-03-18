@@ -16,14 +16,14 @@ class SeriesController extends Controller
     public function index()
     {
         return view('management.series.index', [
-            'series' => Series::latest()->get(),
+            'series' => Series::with('courses')->latest()->get(),
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
