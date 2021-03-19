@@ -31,7 +31,7 @@ class CourseFactory extends Factory
             'data' => '{null}',
             'type_course' => 'interactive',
             'pricing' => '120.000',
-            'thumbnail' => $url,
+            'thumbnail' => $this->faker->imageUrl(),
             'dificulty' => 'medium',
             'duration' => '13 Hours',
             'series_id' => rand(1, 15),

@@ -574,7 +574,7 @@
       <div class="col-12 col-lg-4 mb-6 mb-lg-0">
         <div class="card border-0 bg-transparent">
           <div class="position-absolute bg-white shadow-primary text-center p-2 rounded ml-3 mt-3">{{ $course->mentor->name }}</div>
-          <img class="card-img-top shadow rounded" src="/assets/landing/images/blog/01.png" alt="Image">
+          <img class="card-img-top shadow rounded" src="{{ $course->thumbnail }}" alt="Image">
           <div class="card-body pt-5"> <a class="d-inline-block text-muted mb-2" href="#">{{ $course->programming_Language }}</a>
             <h2 class="h5 font-weight-medium">
                 <a class="link-title" href="#">{{ $course->title }}</a>

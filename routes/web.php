@@ -6,6 +6,7 @@ use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\ResponseRedirectHomeController;
 use App\Http\Controllers\TemporarySystemController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\StudentController;
@@ -15,10 +16,14 @@ use App\Http\Controllers\EpisodeController;
 
 Route::view('filepond', 'filepond');
 
+Route::post('proses', function(){
+  dd(request());
+});
 Route::get('/', HomeController::class);
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('redirect', ResponseRedirectHomeController::class);
 Route::post('upload', TemporarySystemController::class)->name('upload.temporary');
+Route::get('pay', [PaymentController::class, 'index']);
 Route::get('auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
 Route::get('auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
 

@@ -20,6 +20,9 @@
 
 <link href="assets/landing/css/theme-plugin.css" rel="stylesheet" />
 <link href="assets/landing/css/theme.min.css" rel="stylesheet" />
+<script type="text/javascript"
+            src="https://app.sandbox.midtrans.com/snap/snap.js"
+            data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
 
 <!-- inject css end -->
 
@@ -33,7 +36,7 @@
   
 <!-- preloader start -->
 
-<div id="ht-preloader">
+{{-- <div id="ht-preloader">
   <div class="loader clear-loader">
     <div class="loader-inner">
       <svg viewBox="0 0 80 80">
@@ -41,7 +44,7 @@
       </svg>
     </div>
   </div>
-</div>
+</div> --}}
 
 <!-- preloader end -->
 
@@ -317,6 +320,7 @@
            "app_id": "23ae9d5c"
      });
 </script>
+{{ $script ?? null }}
 <!-- End of Customerly Live Chat Snippet Code -->
 <!-- inject js end -->
 

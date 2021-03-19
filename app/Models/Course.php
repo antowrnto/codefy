@@ -35,6 +35,10 @@ class Course extends Model
         ->withTimestamps();
     }
     
+    public function payments(){
+        return $this->hasMany(Payment::class);
+    }
+    
     public function toSearchableArray()
     {
         $array = $this->toArray();
