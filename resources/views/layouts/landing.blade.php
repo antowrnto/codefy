@@ -14,12 +14,12 @@
 <title>Codefy - Screencast</title>
 
 <!-- Favicon Icon -->
-<link rel="shortcut icon" href="assets/landing/images/favicon.ico" />
+<link rel="shortcut icon" href="/assets/landing/images/favicon.ico" />
 
 <!-- inject css start -->
 
-<link href="assets/landing/css/theme-plugin.css" rel="stylesheet" />
-<link href="assets/landing/css/theme.min.css" rel="stylesheet" />
+<link href="/assets/landing/css/theme-plugin.css" rel="stylesheet" />
+<link href="/assets/landing/css/theme.min.css" rel="stylesheet" />
 <script type="text/javascript"
             src="https://app.sandbox.midtrans.com/snap/snap.js"
             data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
@@ -216,7 +216,7 @@
     
 <!--footer start-->
 
-<footer class="py-11 bg-primary position-relative" data-bg-img="assets/landing/images/bg/03.png">
+<footer class="py-11 bg-primary position-relative" data-bg-img="/assets/landing/images/bg/03.png">
   <div class="shape-1" style="height: 150px; overflow: hidden;">
     <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
       <path d="M0.00,49.98 C150.00,150.00 271.49,-50.00 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #fff;"></path>
@@ -310,8 +310,8 @@
  
 <!-- inject js start -->
 
-<script src="assets/landing/js/theme-plugin.js"></script>
-<script src="assets/landing/js/theme-script.js"></script>
+<script src="/assets/landing/js/theme-plugin.js"></script>
+<script src="/assets/landing/js/theme-script.js"></script>
 <!-- Customerly Live Chat Snippet Code -->
 <script>
      !function(){var e=window,i=document,t="customerly",n="queue",o="load",r="settings",u=e[t]=e[t]||[];if(u.t){return void u.i("[customerly] SDK already initialized. Snippet included twice.")}u.t=!0;u.loaded=!1;u.o=["event","attribute","update","show","hide","open","close"];u[n]=[];u.i=function(t){e.console&&!u.debug&&console.error&&console.error(t)};u.u=function(e){return function(){var t=Array.prototype.slice.call(arguments);return t.unshift(e),u[n].push(t),u}};u[o]=function(t){u[r]=t||{};if(u.loaded){return void u.i("[customerly] SDK already loaded. Use customerly.update to change settings.")}u.loaded=!0;var e=i.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://messenger.customerly.io/launcher.js";var n=i.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};u.o.forEach(function(t){u[t]=u.u(t)})}();

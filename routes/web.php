@@ -23,7 +23,7 @@ Route::get('/', HomeController::class);
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('redirect', ResponseRedirectHomeController::class);
 Route::post('upload', TemporarySystemController::class)->name('upload.temporary');
-Route::get('pay', [PaymentController::class, 'index']);
+Route::get('pay/{course}', [PaymentController::class, 'index']);
 Route::get('auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
 Route::get('auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
 

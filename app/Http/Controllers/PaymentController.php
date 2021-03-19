@@ -3,33 +3,43 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Course;
+use App\Models\Payment;
 
 class PaymentController extends Controller
 {
-    public function index(){
-      // Set your Merchant Server Key
+    public function index(Course $course){
       \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
-      // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-      \Midtrans\Config::$isProduction = false;
-      // Set sanitization on (default)
+      \Midtrans\Config::$isProduction = env('MIDTRANS_ENVIRONMENT');
       \Midtrans\Config::$isSanitized = true;
-      // Set 3DS transaction for credit card to true
       \Midtrans\Config::$is3ds = true;
-       
-      $params = array(
-          'transaction_details' => array(
+      
+      $user = Auth::user();
+      
+      $data = [
+          'transaction_details' => [
               'order_id' => rand(),
-              'gross_amount' => 10000,
-          ),
-          'customer_details' => array(
-              'first_name' => 'budi',
-              'last_name' => 'pratama',
-              'email' => 'budi.pra@example.com',
-              'phone' => '08111222333',
-          ),
-      );
-       
-      $snapToken = \Midtrans\Snap::getSnapToken($params);
+              'gross_amount' => $course->pricing,
+          ],
+          
+          'customer_details' => [
+              'first_name' => $user->name,
+              'email' => $user->email,
+          ],
+      ];
+      $payment = Payment::where('course_id', $course->id)->where('user_id', $user->id)->first();
+      
+      if ($payment) {
+        $snapToken = $payment->snap_token;
+      } else {
+        $snapToken = \Midtrans\Snap::getSnapToken($data);
+                
+        Auth::user()->payments()->create([
+          'course_id' => $course->id,
+          'snap_token' => $snapToken
+        ]);
+      }
       
       return view('landing.payment', compact('snapToken'));
     }

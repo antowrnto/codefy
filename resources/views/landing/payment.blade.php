@@ -88,7 +88,6 @@
     </div>
   </div>
 </section>
-
 </div>
 
   <form id="payment-form" method="post" action="/proses">
@@ -102,8 +101,7 @@
     
       $('#pay-button').click(function (event) {
         event.preventDefault();
-        $(this).attr("disabled", "disabled");
-      
+
           var resultType = document.getElementById('result-type');
           var resultData = document.getElementById('result-data');
           function changeResult(type,dataResult){
@@ -111,7 +109,7 @@
             $("#result-data").val(JSON.stringify(dataResult));
           }
           
-          snap.pay('{{ Auth::user()->payments->snap_token }}', {
+          snap.pay('{{ $snapToken }}', {
             
             onSuccess: function(result){
               changeResult('success', result);
