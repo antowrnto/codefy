@@ -25,4 +25,10 @@ class HomeController extends Controller
     {
         return view('landing.about');
     }
+    
+    public function course(){
+        return view('landing.courses', [
+          'courses' => Course::with('mentor')->paginate(5),
+        ]);
+    }
 }

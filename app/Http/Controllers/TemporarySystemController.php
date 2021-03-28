@@ -20,8 +20,8 @@ class TemporarySystemController extends Controller
           $file = $request->file('thumbnail-image');
           $name = $file->getClientOriginalName();
           $folder = 'temp/' . uniqid() . '-' . now()->timestamp;
-          Storage::disk('gcs')->putFileAs($folder, $file, $name);
-          $link = Storage::disk('gcs')->url($folder . '/' . $name);
+          Storage::putFileAs($folder, $file, $name);
+          $link = Storage::url($folder . '/' . $name);
           
           TemporaryFile::create([
               'folder_name' => $folder,
@@ -29,7 +29,7 @@ class TemporarySystemController extends Controller
               'file_link' => $link,
           ]);
           
-          return array("folder" => $folder, "name" => $name);
+          return $folder;
         }
         
       return '';

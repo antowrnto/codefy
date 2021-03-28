@@ -21,6 +21,7 @@ Route::post('proses', function(){
 });
 Route::get('/', HomeController::class);
 Route::get('about', [HomeController::class, 'about'])->name('about');
+Route::get('course', [HomeController::class, 'course'])->name('course');
 Route::get('redirect', ResponseRedirectHomeController::class);
 Route::post('upload', TemporarySystemController::class)->name('upload.temporary');
 Route::get('pay/{course}', [PaymentController::class, 'index']);
@@ -93,3 +94,9 @@ Route::middleware(['auth:sanctum', 'verified', 'role:mentor'])->prefix('mentor')
 Route::middleware(['auth:sanctum', 'verified', 'role:student'])->prefix('student')->group(function () {
     Route::get('/', DashboardController::class)->name('dashboard.student');
 });
+
+
+Route::resource('post', 'PostController')->only('index', 'store');
+
+
+Route::resource('post', 'PostController')->only('index', 'store');
