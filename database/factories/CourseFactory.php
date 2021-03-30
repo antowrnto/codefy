@@ -30,7 +30,7 @@ class CourseFactory extends Factory
             'programming_language' => 'Python',
             'data' => '{null}',
             'type_course' => 'interactive',
-            'pricing' => '120.000',
+            'pricing' => '120000',
             'thumbnail' => $this->faker->imageUrl(),
             'dificulty' => 'medium',
             'duration' => '13 Hours',

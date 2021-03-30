@@ -14,14 +14,13 @@ class CreatePaymentsTable extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id();
+            $table->string('order_id')->unique();
             $table->foreignId('user_id');
             $table->foreignId('course_id');
             $table->string('snap_token');
             $table->integer('status_code')->nullable();
             $table->string('status_message')->nullable();
             $table->string('transaction_id')->nullable();
-            $table->integer('order_id')->nullable()->unique();
             $table->string('gross_amount')->nullable();
             $table->string('payment_type')->nullable();
             $table->string('transaction_status')->nullable();

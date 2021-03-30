@@ -31,4 +31,8 @@ class HomeController extends Controller
           'courses' => Course::with('mentor')->paginate(5),
         ]);
     }
+    
+    public function courseDetail(Course $course){
+        dd($course);
+    }
 }

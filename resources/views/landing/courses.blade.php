@@ -38,10 +38,10 @@
         <!-- Blog Card -->
         <div class="card border-0 bg-transparent mt-2">
           <div class="position-absolute bg-white shadow-primary text-center p-2 rounded ml-3 mt-3">{{ $course->mentor->name }}</div>
-          <img class="card-img-top shadow rounded" src="{{ $course->thumbnail }}" alt="Image">
+          <a href="{{ route('course.detail', $course->slug) }}"><img class="card-img-top shadow rounded" src="{{ $course->thumbnail }}" alt="Image">
           <div class="card-body pt-5"> <a class="d-inline-block text-muted mb-2" href="#">{{ $course->programming_language }}</a>
             <h2 class="h5 font-weight-medium">
-                <a class="link-title" href="#">{{ $course->title }}</a>
+                <a class="link-title" href="{{ route('course.detail', $course->slug) }}">{{ $course->title }}</a>
               </h2>
             <p>{{ Str::limit($course->description, 150) }}</p>
           </div>

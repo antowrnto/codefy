@@ -16,15 +16,14 @@ use App\Http\Controllers\EpisodeController;
 
 Route::view('filepond', 'filepond');
 
-Route::post('proses', function(){
-  dd(request());
-});
 Route::get('/', HomeController::class);
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('course', [HomeController::class, 'course'])->name('course');
+Route::get('course/{course:slug}', [HomeController::class, 'courseDetail'])->name('course.detail');
 Route::get('redirect', ResponseRedirectHomeController::class);
 Route::post('upload', TemporarySystemController::class)->name('upload.temporary');
-Route::get('pay/{course}', [PaymentController::class, 'index']);
+Route::get('payments/{course}', [PaymentController::class, 'payment'])->middleware('auth');
+Route::post('proses', [PaymentController::class, 'prosesPayment']);
 Route::get('auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
 Route::get('auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
 
@@ -94,9 +93,3 @@ Route::middleware(['auth:sanctum', 'verified', 'role:mentor'])->prefix('mentor')
 Route::middleware(['auth:sanctum', 'verified', 'role:student'])->prefix('student')->group(function () {
     Route::get('/', DashboardController::class)->name('dashboard.student');
 });
-
-
-Route::resource('post', 'PostController')->only('index', 'store');
-
-
-Route::resource('post', 'PostController')->only('index', 'store');
