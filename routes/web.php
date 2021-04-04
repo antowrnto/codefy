@@ -19,11 +19,11 @@ Route::view('filepond', 'filepond');
 Route::get('/', HomeController::class);
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('course', [HomeController::class, 'course'])->name('course');
-Route::get('course/{course:slug}', [HomeController::class, 'courseDetail'])->name('course.detail');
 Route::get('redirect', ResponseRedirectHomeController::class);
+Route::post('prosesPayment', [PaymentController::class, 'prosesPayment'])->name('proses.payment');
+Route::view('thankyou', 'thankyou');
 Route::post('upload', TemporarySystemController::class)->name('upload.temporary');
 Route::get('payments/{course}', [PaymentController::class, 'payment'])->middleware('auth');
-Route::post('proses', [PaymentController::class, 'prosesPayment']);
 Route::get('auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
 Route::get('auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
 

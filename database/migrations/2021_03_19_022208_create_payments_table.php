@@ -14,6 +14,7 @@ class CreatePaymentsTable extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
+            $table->id();
             $table->string('order_id')->unique();
             $table->foreignId('user_id');
             $table->foreignId('course_id');

@@ -18,7 +18,7 @@ class PaymentController extends Controller
       \Midtrans\Config::$is3ds = true;
       
       $user = Auth::user();
-      $order_id = 'CDF' . rand();
+      $order_id = 'CDF-' . rand();
       
       $data = [
           'transaction_details' => [
@@ -50,12 +50,22 @@ class PaymentController extends Controller
     
     public function prosesPayment(Request $request){
       $transaction = json_decode($request->result_data, true);
-      dd($transaction);
+      //dd($transaction);
       switch ($transaction['status_code']) {
         case 200:
           $payment = Payment::where('order_id', $transaction['order_id'])->first();
           $user = User::findOrFail($payment->user_id);
           $user->courses()->attach($payment->course_id);
+          
+          $payment->transaction_id = $transaction['transaction_id'];
+          $payment->status_code = $transaction['status_code'];
+          $payment->transaction_time = $transaction['transaction_time'];
+          $payment->transaction_status = $transaction['transaction_status'];
+          $payment->payment_type = $transaction['payment_type'];
+          $payment->status_message = $transaction['status_message'];
+          $payment->save();
+          
+          return redirect('/thankyou');
           break;
           
         case 201:

@@ -90,7 +90,7 @@
 </section>
 </div>
 
-  <form id="payment-form" method="post" action="/proses">
+  <form id="payment-form" method="post" action="{{ route('proses.payment') }}">
     @csrf
     <input type="hidden" name="result_type" id="result-type" value=""></div>
     <input type="hidden" name="result_data" id="result-data" value=""></div>

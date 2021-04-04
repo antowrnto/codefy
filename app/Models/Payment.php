@@ -11,7 +11,7 @@ class Payment extends Model
     
     protected $guarded = ['id'];
     
-    public function user(){
+    public function student(){
       return $this->belongsTo(User::class);
     }
     
