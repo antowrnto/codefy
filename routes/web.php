@@ -23,7 +23,7 @@ Route::get('redirect', ResponseRedirectHomeController::class);
 Route::post('prosesPayment', [PaymentController::class, 'prosesPayment'])->name('proses.payment');
 Route::view('thankyou', 'thankyou');
 Route::post('upload', TemporarySystemController::class)->name('upload.temporary');
-Route::get('payments/{course}', [PaymentController::class, 'payment'])->middleware('auth');
+Route::get('payment/{course}', [PaymentController::class, 'payment'])->middleware('auth');
 Route::get('auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
 Route::get('auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
 
