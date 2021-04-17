@@ -35,7 +35,7 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
       ```
    2. Install vendor dependencies
       ```
-      composer install && composer upgarade
+      composer install
       ```
    3. Install node moduls untuk tailwind CSS<br/>
        Menggunakan NPM
