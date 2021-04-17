@@ -97,6 +97,6 @@ Codefy memiliki fitur fitur yang sangat keren antaranya :
 # 😎 Happy Coding And Learning
 
 ------------
-Give Me Star For Support <br/>
-Lets Contribute In This Repo<br/>
+
+
 Project Owner by ♥️ ANTO WIRANTO
